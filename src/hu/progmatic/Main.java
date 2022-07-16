@@ -16,6 +16,8 @@ public class Main {
         // Eredmeny eredmeny = createEredmeny("1 1 atletika kalapacsvetes");
         // Eredmeny eredmeny2 = new Eredmeny("1 1 uszas 400m_gyorsuszas");
         // 4. fájl beolvása soronként
+        // 5. számított getterek megvalósítása (alternatíva: statikus segédmetódus)
+        // 6. toString megvalósítása (alternatíva: külső logika), megtanítjuk az objektumokat szöveges visszaadni magukat
         try {
             List<Eredmeny> eredmenyek = new ArrayList<>();
 
@@ -34,6 +36,26 @@ public class Main {
             System.out.println("Ez nem írodik ki hiba esetében.");
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    // "külső" getter
+    private static int getOlimpiaiPont(int helyezes) {
+        switch (helyezes) {
+            case 1:
+                return 7;
+            case 2:
+                return 5;
+            case 3:
+                return 4;
+            case 4:
+                return 3;
+            case 5:
+                return 2;
+            case 6:
+                return 1;
+            default:
+                return 0;
         }
     }
 
